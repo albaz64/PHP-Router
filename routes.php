@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/router.php';
+require_once __DIR__ . '/router.php';
 
 // ##################################################
 // ##################################################
@@ -28,14 +28,14 @@ get('/user/$name/$last_name', 'views/full_name.php');
 get('/product/$type/color/$color', 'product.php');
 
 // A route with a callback
-get('/callback', function(){
+get('/callback', function () {
   echo 'Callback executed';
 });
 
 // A route with a callback passing a variable
 // To run this route, in the browser type:
 // http://localhost/user/A
-get('/callback/$name', function($name){
+get('/callback/$name', function ($name) {
   echo "Callback executed. The name is $name";
 });
 
@@ -45,7 +45,7 @@ get('/product', '');
 // A route with a callback passing 2 variables
 // To run this route, in the browser type:
 // http://localhost/callback/A/B
-get('/callback/$name/$last_name', function($name, $last_name){
+get('/callback/$name/$last_name', function ($name, $last_name) {
   echo "Callback executed. The full name is $name $last_name";
 });
 
@@ -65,4 +65,4 @@ post('/user', '/api/save_user');
 // For GET or POST
 // The 404.php which is inside the views folder will be called
 // The 404.php has access to $_GET and $_POST
-any('/404','views/404.php');
+any('/404', 'views/404.php');
